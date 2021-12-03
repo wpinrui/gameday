@@ -1,2 +1,2 @@
-# accumulate
-The effects of habits - good and bad - accumulate over time. This Android application aims to help users cultivate healthy habits.
+# gameday
+Measure your day in stats. Cultivate good habits. Treat every day like game day.
