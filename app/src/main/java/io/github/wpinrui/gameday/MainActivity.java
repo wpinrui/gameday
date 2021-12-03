@@ -1,4 +1,4 @@
-package io.github.wpinrui.accumulate;
+package io.github.wpinrui.gameday;
 
 import androidx.appcompat.app.AppCompatActivity;
 
