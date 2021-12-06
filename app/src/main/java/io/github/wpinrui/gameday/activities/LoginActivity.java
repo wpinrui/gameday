@@ -1,89 +1,54 @@
 package io.github.wpinrui.gameday.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.Toast;
 
-import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 import io.github.wpinrui.gameday.R;
+import io.github.wpinrui.gameday.auth.Auth;
+import io.github.wpinrui.gameday.commons.Utils;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
     private EditText usernameEditText;
     private EditText passwordEditText;
     private Button loginButton;
     private Button forgotPasswordButton;
     private Button signUpButton;
-    private ProgressBar loadingProgressBar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mAuth = FirebaseAuth.getInstance();
-        initBindings();
+        setContentView(R.layout.activity_login);
+        initElements();
+    }
+
+
+    private void initElements() {
+        usernameEditText = findViewById(R.id.username);
+        passwordEditText = findViewById(R.id.password);
+        loginButton = findViewById(R.id.login);
+        forgotPasswordButton = findViewById(R.id.forgotPasswordBtn);
+        signUpButton = findViewById(R.id.signUpBtn);
+
         loginButton.setOnClickListener(v -> {
-            loadingProgressBar.setVisibility(View.VISIBLE);
-            signIn(usernameEditText.getText().toString(), passwordEditText.getText().toString());
+            Auth.signIn(username(), password(), this);
         });
         forgotPasswordButton.setOnClickListener(v -> {
-            goToForgotPassword();
+            Utils.goToActivity(this, ForgotPasswordActivity.class);
         });
         signUpButton.setOnClickListener(v -> {
-            goToSignUp();
+            Utils.goToActivity(this, SignupActivity.class);
         });
     }
 
-    private void signIn(String email, String password) {
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, task -> {
-                    if (task.isSuccessful()) {
-                        showLoginMessage(R.string.welcome);
-                        goToMain();
-                    } else {
-                        showLoginMessage(R.string.login_failed);
-                        loadingProgressBar.setVisibility(View.GONE);
-                    }
-                });
+    private String username() {
+        return usernameEditText.getText().toString();
     }
 
-    private void initBindings() {
-        io.github.wpinrui.gameday.databinding.ActivityLoginBinding binding = io.github.wpinrui.gameday.databinding.ActivityLoginBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-        usernameEditText = binding.username;
-        passwordEditText = binding.password;
-        loginButton = binding.login;
-        forgotPasswordButton = binding.forgotPasswordBtn;
-        loadingProgressBar = binding.loading;
-        signUpButton = binding.signUpBtn;
+    private String password() {
+        return passwordEditText.getText().toString();
     }
-
-    private void showLoginMessage(@StringRes Integer errorString) {
-        Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_LONG).show();
-    }
-
-    private void goToMain() {
-        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-        startActivity(intent);
-    }
-
-    private void goToForgotPassword() {
-        Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
-        startActivity(intent);
-    }
-
-    private void goToSignUp() {
-        Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
-        startActivity(intent);
-    }
-
-
 }

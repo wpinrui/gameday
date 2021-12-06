@@ -3,41 +3,36 @@ package io.github.wpinrui.gameday.activities;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 import io.github.wpinrui.gameday.R;
+import io.github.wpinrui.gameday.auth.Auth;
+import io.github.wpinrui.gameday.commons.Utils;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
 
     private EditText editEmail;
     private Button resetBtn;
+    private Button cancelBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
+        initElements();
+    }
 
+    private void initElements() {
         editEmail = findViewById(R.id.editTextEmailAddress);
         resetBtn = findViewById(R.id.resetBtn);
+        cancelBtn = findViewById(R.id.cancelBtn);
 
-        resetBtn.setOnClickListener(v -> sendPasswordResetEmail(editEmail.getText().toString()));
+        resetBtn.setOnClickListener(
+                v -> Auth.sendPasswordResetEmail(editEmail.getText().toString(), this)
+        );
+        cancelBtn.setOnClickListener(v -> Utils.goToActivity(this, LoginActivity.class));
     }
 
-    private void sendPasswordResetEmail(String email) {
-        System.out.println(email);
-        FirebaseAuth auth = FirebaseAuth.getInstance();
-        auth.sendPasswordResetEmail(email)
-                .addOnCompleteListener(task -> {
-                    System.out.println("done");
-                    if (task.isSuccessful()) {
-                        Toast.makeText(this, "Email sent", Toast.LENGTH_LONG).show();
-                    } else {
-                        Toast.makeText(this, task.toString(), Toast.LENGTH_LONG).show();
-                    }
-                });
-    }
+
 }
