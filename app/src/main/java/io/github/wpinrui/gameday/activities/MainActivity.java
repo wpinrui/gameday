@@ -1,4 +1,4 @@
-package io.github.wpinrui.gameday;
+package io.github.wpinrui.gameday.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Objects;
 
-import io.github.wpinrui.gameday.ui.auth.LoginActivity;
+import io.github.wpinrui.gameday.R;
 
 public class MainActivity extends AppCompatActivity {
 

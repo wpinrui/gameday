@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Accumulate">
         <activity
-            android:name=".ui.auth.LoginActivity"
+            android:name=".activities.LoginActivity"
             android:exported="false"
             android:label="@string/title_activity_login" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,9 +22,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.auth.ForgotPasswordActivity"
+            android:name=".activities.ForgotPasswordActivity"
             android:exported="false"
-            android:label="ForgotPasswordActivity" />
+            android:label="@string/forgot_password" />
+        <activity
+            android:name=".activities.SignupActivity"
+            android:exported="false"
+            android:label="@string/title_activity_signup" />
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package io.github.wpinrui.gameday.ui.auth;
+package io.github.wpinrui.gameday.activities;
 
 import android.os.Bundle;
 import android.widget.Button;

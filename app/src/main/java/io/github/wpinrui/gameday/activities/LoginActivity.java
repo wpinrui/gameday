@@ -1,4 +1,4 @@
-package io.github.wpinrui.gameday.ui.auth;
+package io.github.wpinrui.gameday.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-import io.github.wpinrui.gameday.MainActivity;
 import io.github.wpinrui.gameday.R;
 
 public class LoginActivity extends AppCompatActivity {
