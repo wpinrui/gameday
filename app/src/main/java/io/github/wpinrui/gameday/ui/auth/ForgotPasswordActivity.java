@@ -20,17 +20,19 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
-//
-//        editEmail = findViewById(R.id.editTextEmailAddress);
-//        resetBtn = findViewById(R.id.resetBtn);
-//
-//        resetBtn.setOnClickListener(v -> sendPasswordResetEmail(editEmail.getText().toString()));
+
+        editEmail = findViewById(R.id.editTextEmailAddress);
+        resetBtn = findViewById(R.id.resetBtn);
+
+        resetBtn.setOnClickListener(v -> sendPasswordResetEmail(editEmail.getText().toString()));
     }
 
     private void sendPasswordResetEmail(String email) {
+        System.out.println(email);
         FirebaseAuth auth = FirebaseAuth.getInstance();
         auth.sendPasswordResetEmail(email)
                 .addOnCompleteListener(task -> {
+                    System.out.println("done");
                     if (task.isSuccessful()) {
                         Toast.makeText(this, "Email sent", Toast.LENGTH_LONG).show();
                     } else {

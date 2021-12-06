@@ -72,17 +72,17 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void goToMain() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
     }
 
     private void goToForgotPassword() {
-        Intent intent = new Intent(this, ForgotPasswordActivity.class);
+        Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
         startActivity(intent);
     }
 
     private void goToSignUp() {
-        Intent intent = new Intent(this, SignupActivity.class);
+        Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
         startActivity(intent);
     }
 
