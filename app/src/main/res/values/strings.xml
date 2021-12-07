@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">accumulate</string>
+    <string name="app_name">gameday</string>
     <string name="page_title">gameday</string>
     <string name="placeholder">Placeholder</string>
     <string name="content_placeholder">Placeholder Description</string>
