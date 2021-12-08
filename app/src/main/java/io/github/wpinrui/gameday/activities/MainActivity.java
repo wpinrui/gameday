@@ -10,6 +10,10 @@ import io.github.wpinrui.gameday.R;
 import io.github.wpinrui.gameday.auth.Auth;
 import io.github.wpinrui.gameday.commons.Utils;
 
+/**
+ * The main screen where the user gets an overview of their statistics for the season. If there is
+ * no logged-in account, the user is directed to the LoginActivity.
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
