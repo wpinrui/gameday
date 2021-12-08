@@ -8,9 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import io.github.wpinrui.gameday.R;
 import io.github.wpinrui.gameday.auth.Auth;
-import io.github.wpinrui.gameday.auth.AuthenticationException;
 import io.github.wpinrui.gameday.commons.Utils;
-import io.github.wpinrui.gameday.ui.Ui;
 
 /**
  * Activity that allows the user to sign in if they have an account, or direct them to sign up or
@@ -40,13 +38,10 @@ public class LoginActivity extends AppCompatActivity {
         signUpButton = findViewById(R.id.signUpBtn);
 
         loginButton.setOnClickListener(v -> {
-            try {
-                Auth.signIn(username(), password(), () -> {
-                    Utils.goToActivity(this, MainActivity.class);
-                });
-            } catch (AuthenticationException e) {
-                Ui.inform("Failed to login", this);
-            }
+
+            Auth.signIn(username(), password(), () -> {
+                Utils.goToActivity(this, MainActivity.class);
+            }, () -> {});
         });
         forgotPasswordButton.setOnClickListener(v -> {
             Utils.goToActivity(this, ForgotPasswordActivity.class);

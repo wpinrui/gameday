@@ -8,9 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import io.github.wpinrui.gameday.R;
 import io.github.wpinrui.gameday.auth.Auth;
-import io.github.wpinrui.gameday.auth.AuthenticationException;
 import io.github.wpinrui.gameday.commons.Utils;
-import io.github.wpinrui.gameday.ui.Ui;
 
 /**
  * Activity that allows user to reset their password by sending a password reset email to their
@@ -36,13 +34,10 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
         resetBtn.setOnClickListener(
                 v -> {
-                    try {
-                        Auth.sendPasswordResetEmail(editEmail.getText().toString(), () -> {
-                            // TODO: implement action on success
-                        });
-                    } catch (AuthenticationException e) {
-                        Ui.inform("Failed to send email", this);
-                    }
+                    Auth.sendPasswordResetEmail(editEmail.getText().toString(),
+                            () -> {},
+                            () -> {});
+
                 }
         );
         cancelBtn.setOnClickListener(v -> Utils.goToActivity(this, LoginActivity.class));

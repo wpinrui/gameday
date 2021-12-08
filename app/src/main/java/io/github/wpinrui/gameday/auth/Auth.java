@@ -15,14 +15,13 @@ public class Auth {
      * @param email Email address used by the user to login
      * @param onSuccess Action to run when the reset email is successfully sent
      */
-    public static void sendPasswordResetEmail(String email, Runnable onSuccess) {
-        System.out.println(email);
+    public static void sendPasswordResetEmail(String email, Runnable onSuccess, Runnable onFailure) {
         mAuth.sendPasswordResetEmail(email)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         onSuccess.run();
                     } else {
-                        throw new AuthenticationException(AuthenticationFailureType.RESET_FAILURE);
+                        onFailure.run();
                     }
                 });
     }
@@ -31,16 +30,16 @@ public class Auth {
      * Attempts to sign in the user using the given email address and password.
      *
      * @param email Email address used by the user to login
-     * @param password Password used by the user to login
+     * @param pw Password used by the user to login
      * @param onSuccess Action to run when the login is successful
      */
-    public static void signIn(String email, String password, Runnable onSuccess) {
-        mAuth.signInWithEmailAndPassword(email, password)
+    public static void signIn(String email, String pw, Runnable onSuccess, Runnable onFailure) {
+        mAuth.signInWithEmailAndPassword(email, pw)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         onSuccess.run();
                     } else {
-                        throw new AuthenticationException(AuthenticationFailureType.LOGIN_FAILURE);
+                        onFailure.run();
                     }
                 });
     }
@@ -50,17 +49,17 @@ public class Auth {
      * the sign up is successful.
      *
      * @param email Email address used by the user to sign up
-     * @param password Password used by the user to sign up
+     * @param pw Password used by the user to sign up
      * @param onSuccess Action to run when the login is successful
      */
-    public static void signup(String email, String password, Runnable onSuccess) {
+    public static void signup(String email, String pw, Runnable onSuccess, Runnable onFailure) {
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
-        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(
+        mAuth.createUserWithEmailAndPassword(email, pw).addOnCompleteListener(
                 task -> {
                     if (task.isSuccessful()) {
                         onSuccess.run();
                     } else {
-                        throw new AuthenticationException(AuthenticationFailureType.SIGNUP_FAILURE);
+                        onFailure.run();
                     }
                 }
         );

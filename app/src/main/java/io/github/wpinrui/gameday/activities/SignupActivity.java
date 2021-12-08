@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import io.github.wpinrui.gameday.R;
 import io.github.wpinrui.gameday.auth.Auth;
-import io.github.wpinrui.gameday.auth.AuthenticationException;
 import io.github.wpinrui.gameday.commons.Utils;
 import io.github.wpinrui.gameday.ui.Ui;
 
@@ -39,13 +38,9 @@ public class SignupActivity extends AppCompatActivity {
 
         signupBtn.setOnClickListener(v -> {
             if (password().equals(passwordConfirm())) {
-                try {
-                    Auth.signup(email(), password(), () -> {
-                        Utils.goToActivity(this, MainActivity.class);
-                    });
-                } catch (AuthenticationException e) {
-                    Ui.inform("Failed to register", this);
-                }
+                Auth.signup(email(), password(), () -> {
+                    Utils.goToActivity(this, MainActivity.class);
+                }, () -> {});
             } else {
                 Ui.inform("Passwords do not match", this);
             }
