@@ -38,10 +38,12 @@ public class LoginActivity extends AppCompatActivity {
         signUpButton = findViewById(R.id.signUpBtn);
 
         loginButton.setOnClickListener(v -> {
-
+            System.out.println("Signing in...");
             Auth.signIn(username(), password(), () -> {
-                Utils.goToActivity(this, MainActivity.class);
-            }, () -> {});
+                Utils.goToActivity(this, StartActivity.class);
+            }, () -> {
+                System.out.println("Failed to sign in");
+            });
         });
         forgotPasswordButton.setOnClickListener(v -> {
             Utils.goToActivity(this, ForgotPasswordActivity.class);

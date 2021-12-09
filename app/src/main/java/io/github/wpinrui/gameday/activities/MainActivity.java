@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Objects.requireNonNull(getSupportActionBar()).hide();
         if (Auth.isLoggedIn()) {
-            // go to start screen
+            Utils.goToActivity(this, StartActivity.class);
         } else {
             Utils.goToActivity(this, LoginActivity.class);
         }
