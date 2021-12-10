@@ -4,13 +4,13 @@ Measure your day in stats. Cultivate good habits. Treat every day like game day.
 ## Tasks
 - [x] Firebase authentication
 - [ ] Authentication testing
-- [ ] Firestore functions
+- [x] Firestore functions
 - [ ] Firestore tests
-- [ ] Model
+- [x] Model
 - [ ] Model tests
 - [ ] Main Activities
 - [ ] Add Stat
-- [ ] Daily Stat Update
+- [x] Daily Stat Update
 - [ ] View Historic Data
 - [ ] Date view / season view
 - [ ] Visual improvements
