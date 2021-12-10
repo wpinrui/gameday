@@ -6,45 +6,31 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import java.util.ArrayList;
 
 import io.github.wpinrui.gameday.R;
-import io.github.wpinrui.gameday.commons.Utils;
 import io.github.wpinrui.gameday.model.Model;
 import io.github.wpinrui.gameday.model.Statistic;
-import io.github.wpinrui.gameday.ui.StartAdapter;
+import io.github.wpinrui.gameday.ui.DailyUpdateAdapter;
 
-public class StartActivity extends AppCompatActivity {
+public class DailyUpdateActivity extends AppCompatActivity {
 
     private ArrayList<Statistic> statistics;
-    private FloatingActionButton fab;
     private Model model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start);
+        setContentView(R.layout.activity_daily_update);
         initElements();
     }
 
     private void initElements() {
-        Model.initialise(onModelChanged);
-        fab = findViewById(R.id.floating_action_button);
-        fab.setEnabled(false);
-        fab.setOnClickListener(v -> Utils.goToActivity(this, DailyUpdateActivity.class));
-    }
-
-    private final Runnable onModelChanged = () -> {
         model = Model.getInstance();
-        fab.setEnabled(true);
-        RecyclerView rvStatistics = findViewById(R.id.rvStatistics);
+        RecyclerView rvStatistics = findViewById(R.id.dailyUpdateRecycler);
         statistics = model.getStatistics();
-        StartAdapter adapter = new StartAdapter(statistics);
+        DailyUpdateAdapter adapter = new DailyUpdateAdapter(statistics);
         rvStatistics.setAdapter(adapter);
         rvStatistics.setLayoutManager(new LinearLayoutManager(this));
-    };
-
-
+    }
 }

@@ -11,6 +11,16 @@ public class Statistic implements Serializable {
     private Map<String, Double> presets;
     private Map<Date, Double> history;
 
+    public Statistic() {}
+
+    public Statistic(String name, String shortName, String description, double min, double max) {
+        this.name = name;
+        this.shortName = shortName;
+        this.description = description;
+        presets.put("MIN", min);
+        presets.put("MAX", max);
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -49,5 +59,25 @@ public class Statistic implements Serializable {
 
     public Map<Date, Double> getHistory() {
         return history;
+    }
+
+    public void addHistory(Date date, double value) {
+        history.put(date, value);
+    }
+
+    public void addPreset(String s, double value) {
+        presets.put(s, value);
+    }
+
+    public double getCurrentSeasonAverage() {
+        return 24.8;
+    }
+
+    public double getMax() {
+        return presets.get("MAX");
+    }
+
+    public double getMin() {
+        return presets.get("MIN");
     }
 }

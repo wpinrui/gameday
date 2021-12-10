@@ -33,6 +33,10 @@
             android:name=".activities.SignupActivity"
             android:exported="false"
             android:label="@string/title_activity_signup" />
+        <activity
+            android:name=".activities.DailyUpdateActivity"
+            android:exported="false"
+            android:label="@string/title_activity_daily_update" />
     </application>
 
 </manifest>

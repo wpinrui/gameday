@@ -4,8 +4,6 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Objects;
-
 import io.github.wpinrui.gameday.R;
 import io.github.wpinrui.gameday.auth.Auth;
 import io.github.wpinrui.gameday.commons.Utils;
@@ -19,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Objects.requireNonNull(getSupportActionBar()).hide();
         if (Auth.isLoggedIn()) {
             Utils.goToActivity(this, StartActivity.class);
         } else {
