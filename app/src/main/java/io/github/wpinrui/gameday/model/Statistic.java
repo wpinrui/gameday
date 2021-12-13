@@ -1,7 +1,10 @@
 package io.github.wpinrui.gameday.model;
 
 import java.io.Serializable;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Statistic implements Serializable {
@@ -11,7 +14,8 @@ public class Statistic implements Serializable {
     private Map<String, Double> presets;
     private Map<String, Double> history;
 
-    public Statistic() {}
+    public Statistic() {
+    }
 
     public Statistic(String name, String shortName, String description, double min, double max) {
         this.name = name;
@@ -70,7 +74,32 @@ public class Statistic implements Serializable {
     }
 
     public double getCurrentSeasonAverage() {
-        return 24.8;
+        DecimalFormat df = new DecimalFormat("#.#");
+        df.setRoundingMode(RoundingMode.DOWN);
+        return Double.parseDouble(df.format(
+                getCurrentSeasonHistory()
+                        .values()
+                        .stream()
+                        .mapToDouble(Double::doubleValue)
+                        .average()
+                        .orElse(0)));
+    }
+
+    private Map<String, Double> getCurrentSeasonHistory() {
+        Map<String, Double> output = new HashMap<>();
+        for (String key : history.keySet()) {
+            if (isCurrentSeason(key)) {
+                output.put(key, history.get(key));
+            }
+        }
+        return output;
+    }
+
+    private boolean isCurrentSeason(String key) {
+        int currentMonth = LocalDate.now().getMonthValue();
+        int currentYear = LocalDate.now().getYear();
+        LocalDate dateToCheck = LocalDate.parse(key);
+        return dateToCheck.getMonthValue() == currentMonth && dateToCheck.getYear() == currentYear;
     }
 
     public double getMax() {
