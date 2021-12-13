@@ -1,7 +1,7 @@
 package io.github.wpinrui.gameday.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Map;
 
 public class Statistic implements Serializable {
@@ -9,7 +9,7 @@ public class Statistic implements Serializable {
     private String shortName;
     private String description;
     private Map<String, Double> presets;
-    private Map<Date, Double> history;
+    private Map<String, Double> history;
 
     public Statistic() {}
 
@@ -37,7 +37,7 @@ public class Statistic implements Serializable {
         this.presets = presets;
     }
 
-    public void setHistory(Map<Date, Double> history) {
+    public void setHistory(Map<String, Double> history) {
         this.history = history;
     }
 
@@ -57,11 +57,11 @@ public class Statistic implements Serializable {
         return presets;
     }
 
-    public Map<Date, Double> getHistory() {
+    public Map<String, Double> getHistory() {
         return history;
     }
 
-    public void addHistory(Date date, double value) {
+    public void addHistory(String date, double value) {
         history.put(date, value);
     }
 
@@ -79,5 +79,24 @@ public class Statistic implements Serializable {
 
     public double getMin() {
         return presets.get("MIN");
+    }
+
+    public boolean hasProgressToday() {
+        return history.containsKey(LocalDate.now().toString());
+    }
+
+    public double dailyProgress() {
+        if (hasProgressToday()) {
+            return history.get(LocalDate.now().toString());
+        }
+        return getMin();
+    }
+
+    public void updateDailyProgress(double value) {
+        if (hasProgressToday()) {
+            history.replace(LocalDate.now().toString(), value);
+        } else {
+            history.put(LocalDate.now().toString(), value);
+        }
     }
 }

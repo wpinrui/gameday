@@ -14,23 +14,15 @@ import com.google.android.material.slider.Slider;
 import java.util.List;
 
 import io.github.wpinrui.gameday.R;
+import io.github.wpinrui.gameday.model.Model;
 import io.github.wpinrui.gameday.model.Statistic;
 
 public class DailyUpdateAdapter extends RecyclerView.Adapter<DailyUpdateAdapter.ViewHolder> {
-
-    public class ViewHolder extends RecyclerView.ViewHolder {
-
-        public TextView textUpdateStatLabel;
-        public Slider slider;
-
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            textUpdateStatLabel = itemView.findViewById(R.id.textUpdateStatLabel);
-            slider = itemView.findViewById(R.id.slider);
-        }
-    }
-
+    private final Model model = Model.getInstance();
+    private Slider slider;
+    private TextView textUpdateStatLabel;
     private List<Statistic> statistics;
+    private Statistic statistic;
 
     public DailyUpdateAdapter(List<Statistic> statistics) {
         this.statistics = statistics;
@@ -48,18 +40,40 @@ public class DailyUpdateAdapter extends RecyclerView.Adapter<DailyUpdateAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull DailyUpdateAdapter.ViewHolder holder, int position) {
-        Statistic statistic = statistics.get(position);
-        TextView textUpdateStatLabel = holder.textUpdateStatLabel;
-        Slider slider = holder.slider;
-        textUpdateStatLabel.setText(statistic.getName());
-        slider.setValueTo((float) statistic.getMax());
-        slider.setValueFrom((float) statistic.getMin());
-        slider.setValue((float) statistic.getMin());
-        slider.setStepSize(0.5f);
+        statistic = statistics.get(position);
+        holder.bind(statistic);
     }
 
     @Override
     public int getItemCount() {
         return statistics.size();
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+
+        public TextView textUpdateStatLabel;
+        public Slider slider;
+        private Statistic statistic;
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            textUpdateStatLabel = itemView.findViewById(R.id.textUpdateStatLabel);
+            slider = itemView.findViewById(R.id.slider);
+        }
+
+        void bind (Statistic statistic) {  //<--bind method allows the ViewHolder to bind to the data it is displaying
+            this.statistic = statistic;
+            textUpdateStatLabel.setText(statistic.getName());
+            initSlider();
+        }
+
+        private void initSlider() {
+            slider.setValueTo((float) statistic.getMax());
+            slider.setValueFrom((float) statistic.getMin());
+            slider.setStepSize(0.5f);
+            slider.setValue((float) statistic.dailyProgress());
+            slider.addOnChangeListener(
+                    (slider, value, fromUser) -> statistic.updateDailyProgress(value));
+        }
     }
 }

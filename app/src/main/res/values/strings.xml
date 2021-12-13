@@ -27,4 +27,5 @@
     <string name="fab_add_statistic_desc">Add new statistic</string>
     <string name="fab_update_desc">Update daily statistics</string>
     <string name="title_activity_daily_update">Update Daily Progress</string>
+    <string name="ok">OK</string>
 </resources>

@@ -20,7 +20,7 @@
         android:id="@+id/confirmBtn"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:text="OK"
+        android:text="@string/ok"
         android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>
