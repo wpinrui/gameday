@@ -28,4 +28,5 @@
     <string name="fab_update_desc">Update daily statistics</string>
     <string name="title_activity_daily_update">Update Daily Progress</string>
     <string name="ok">OK</string>
+    <string name="gameday_logo">gameday logo</string>
 </resources>

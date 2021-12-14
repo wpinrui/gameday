@@ -71,7 +71,7 @@ public class DailyUpdateAdapter extends RecyclerView.Adapter<DailyUpdateAdapter.
             slider.setValueTo((float) statistic.getMax());
             slider.setValueFrom((float) statistic.getMin());
             slider.setStepSize(0.5f);
-            slider.setValue((float) statistic.dailyProgress());
+            slider.setValue((float) statistic.retrieveDailyProgress());
             slider.addOnChangeListener(
                     (slider, value, fromUser) -> statistic.updateDailyProgress(value));
         }

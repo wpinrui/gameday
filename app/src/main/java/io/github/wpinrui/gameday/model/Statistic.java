@@ -73,7 +73,7 @@ public class Statistic implements Serializable {
         presets.put(s, value);
     }
 
-    public double getCurrentSeasonAverage() {
+    public double retrieveCurrentSeasonAverage() {
         DecimalFormat df = new DecimalFormat("#.#");
         df.setRoundingMode(RoundingMode.DOWN);
         return Double.parseDouble(df.format(
@@ -114,7 +114,7 @@ public class Statistic implements Serializable {
         return history.containsKey(LocalDate.now().toString());
     }
 
-    public double dailyProgress() {
+    public double retrieveDailyProgress() {
         if (hasProgressToday()) {
             return history.get(LocalDate.now().toString());
         }

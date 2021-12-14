@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Ivan/Documents/accumulate/app/src/main/res/layout/activity_main.xml" value="0.2786458333333333" />
+        <entry key="..\:/Users/Ivan/Documents/gameday/app/src/main/res/drawable-night/logo.xml" value="0.2947916666666667" />
         <entry key="..\:/Users/Ivan/Documents/gameday/app/src/main/res/drawable/ic_baseline_playlist_add_24.xml" value="0.3880208333333333" />
         <entry key="..\:/Users/Ivan/Documents/gameday/app/src/main/res/drawable/ic_placeholder.xml" value="0.2947916666666667" />
         <entry key="..\:/Users/Ivan/Documents/gameday/app/src/main/res/drawable/ic_plus_24.xml" value="0.3880208333333333" />
@@ -11,7 +12,7 @@
         <entry key="..\:/Users/Ivan/Documents/gameday/app/src/main/res/layout/activity_auth.xml" value="0.2786458333333333" />
         <entry key="..\:/Users/Ivan/Documents/gameday/app/src/main/res/layout/activity_daily_update.xml" value="0.33" />
         <entry key="..\:/Users/Ivan/Documents/gameday/app/src/main/res/layout/activity_forgot_password.xml" value="0.3453125" />
-        <entry key="..\:/Users/Ivan/Documents/gameday/app/src/main/res/layout/activity_login.xml" value="0.3453125" />
+        <entry key="..\:/Users/Ivan/Documents/gameday/app/src/main/res/layout/activity_login.xml" value="0.2786458333333333" />
         <entry key="..\:/Users/Ivan/Documents/gameday/app/src/main/res/layout/activity_main.xml" value="0.2786458333333333" />
         <entry key="..\:/Users/Ivan/Documents/gameday/app/src/main/res/layout/activity_signup.xml" value="0.2786458333333333" />
         <entry key="..\:/Users/Ivan/Documents/gameday/app/src/main/res/layout/activity_start.xml" value="0.20208333333333334" />
@@ -26,5 +27,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.2786458333333333" />
+      </ProjectState>
+    </option>
   </component>
 </project>

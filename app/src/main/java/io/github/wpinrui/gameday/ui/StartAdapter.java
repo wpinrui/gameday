@@ -49,7 +49,7 @@ public class StartAdapter extends RecyclerView.Adapter<StartAdapter.ViewHolder> 
         TextView textLabel = holder.textLabel;
         TextView textValue = holder.textValue;
         textLabel.setText(statistic.getName());
-        textValue.setText(String.valueOf(statistic.getCurrentSeasonAverage()));
+        textValue.setText(String.valueOf(statistic.retrieveCurrentSeasonAverage()));
     }
 
     @Override
