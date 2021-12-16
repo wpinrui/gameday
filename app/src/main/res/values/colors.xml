@@ -2,10 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="brass_str">#CB997E</color>
-    <color name="brass_med">#DDBEA9</color>
-    <color name="brass_lt">#FFE8D6</color>
-    <color name="grass_lt">#B7B7A4</color>
-    <color name="grass_med">#A5A58D</color>
-    <color name="grass_str">#6B705C</color>
+    <color name="dark_primary">#9a2608</color>
+    <color name="default_primary">#b7472a</color>
+    <color name="light_primary">#FFCCBC</color>
+    <color name="accent">#03A9F4</color>
+    <color name="secondary_text">#757575</color>
+    <color name="divider">#BDBDBD</color>
 </resources>

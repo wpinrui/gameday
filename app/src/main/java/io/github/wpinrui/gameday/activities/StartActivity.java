@@ -3,6 +3,7 @@ package io.github.wpinrui.gameday.activities;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,6 +27,7 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+        Utils.setColor(this, R.color.dark_primary);
         initElements();
     }
 
@@ -43,7 +45,7 @@ public class StartActivity extends AppCompatActivity {
         statistics = model.getStatistics();
         StartAdapter adapter = new StartAdapter(statistics);
         rvStatistics.setAdapter(adapter);
-        rvStatistics.setLayoutManager(new LinearLayoutManager(this));
+        rvStatistics.setLayoutManager(new GridLayoutManager(this, 3)); // TODO: fix cut off
     };
 
 

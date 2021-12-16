@@ -2,12 +2,12 @@
     <!-- Base application theme. -->
     <style name="Theme.Gameday" parent="Theme.Material3.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/brass_str</item>
-        <item name="colorPrimaryVariant">@color/brass_str</item>
+        <item name="colorPrimary">@color/default_primary</item>
+        <item name="colorPrimaryVariant">@color/dark_primary</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/grass_str</item>
-        <item name="colorSecondaryVariant">@color/grass_lt</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorSecondaryVariant">@color/accent</item>
         <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@android:color/transparent</item>

@@ -29,4 +29,6 @@
     <string name="title_activity_daily_update">Update Daily Progress</string>
     <string name="ok">OK</string>
     <string name="gameday_logo">gameday logo</string>
+    <string name="forgot_password_title">forgot password</string>
+    <string name="sign_up_title">sign up</string>
 </resources>
