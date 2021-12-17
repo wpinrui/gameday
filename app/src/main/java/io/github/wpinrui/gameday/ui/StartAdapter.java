@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,11 +21,13 @@ public class StartAdapter extends RecyclerView.Adapter<StartAdapter.ViewHolder> 
 
         public TextView textLabel;
         public TextView textValue;
+        public ProgressBar progressBar;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textLabel = itemView.findViewById(R.id.textStatLabel);
             textValue = itemView.findViewById(R.id.textStatValue);
+            progressBar = itemView.findViewById(R.id.progressBar);
         }
     }
 
@@ -48,8 +51,12 @@ public class StartAdapter extends RecyclerView.Adapter<StartAdapter.ViewHolder> 
         Statistic statistic = statistics.get(position);
         TextView textLabel = holder.textLabel;
         TextView textValue = holder.textValue;
+        ProgressBar progressBar = holder.progressBar;
         textLabel.setText(statistic.getName());
         textValue.setText(String.valueOf(statistic.retrieveCurrentSeasonAverage()));
+        progressBar.setMax((int) statistic.getMax());
+        progressBar.setProgress((int) statistic.retrieveCurrentSeasonAverage());
+
     }
 
     @Override

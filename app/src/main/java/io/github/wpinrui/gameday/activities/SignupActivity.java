@@ -27,6 +27,8 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         initElements();
+        Utils.setNotificationBarColor(this, R.color.plain);
+        Utils.setLightNotificationTextColor(this);
     }
 
     private void initElements() {

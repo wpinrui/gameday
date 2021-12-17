@@ -3,12 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/drawable/gradient_start_card.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/drawable/ic_daily_update.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/drawable/ic_history.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/drawable/ic_overview.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/drawable/ic_placeholder.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/drawable/ic_settings.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/drawable/nav_item_color_state.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/drawable/nav_ripple_color_state.xml" value="2.65" />
+        <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/drawable/test.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/layout-night/view_start_row.xml" value="0.371875" />
         <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/layout/activity_daily_update.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/layout/activity_forgot_password.xml" value="0.37135416666666665" />
         <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/layout/activity_login.xml" value="0.20885416666666667" />
-        <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/layout/activity_main.xml" value="0.37135416666666665" />
+        <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/layout/activity_main.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/layout/activity_signup.xml" value="0.37135416666666665" />
-        <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/layout/activity_start.xml" value="0.37135416666666665" />
+        <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/layout/activity_start.xml" value="0.2671875" />
+        <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/layout/test.xml" value="0.371875" />
+        <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/layout/view_start_row.xml" value="0.21666666666666667" />
+        <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.371875" />
+        <entry key="..\:/Users/Ivan/Documents/GitHub/gameday/app/src/main/res/menu/top_app_bar.xml" value="0.371875" />
         <entry key="..\:/Users/Ivan/Documents/accumulate/app/src/main/res/layout/activity_main.xml" value="0.2786458333333333" />
         <entry key="..\:/Users/Ivan/Documents/gameday/app/src/main/res/drawable-night/logo.xml" value="0.2947916666666667" />
         <entry key="..\:/Users/Ivan/Documents/gameday/app/src/main/res/drawable/ic_baseline_playlist_add_24.xml" value="0.3880208333333333" />

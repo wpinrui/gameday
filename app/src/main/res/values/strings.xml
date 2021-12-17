@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">gameday</string>
+    <string name="ui_mode">Light</string>
     <string name="page_title">gameday</string>
     <string name="placeholder">Placeholder</string>
     <string name="content_placeholder">Placeholder Description</string>
@@ -31,4 +32,9 @@
     <string name="gameday_logo">gameday logo</string>
     <string name="forgot_password_title">forgot password</string>
     <string name="sign_up_title">sign up</string>
+    <string name="season_overview">this season</string>
+    <string name="page_overview">Overview</string>
+    <string name="page_history">History</string>
+    <string name="page_daily_update">Today</string>
+    <string name="page_settings">Settings</string>
 </resources>

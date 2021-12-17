@@ -23,5 +23,7 @@ public class MainActivity extends AppCompatActivity {
             Utils.goToActivity(this, LoginActivity.class);
         }
         setContentView(R.layout.activity_main);
+        Utils.setNotificationBarColor(this, R.color.plain);
+        Utils.setLightNotificationTextColor(this);
     }
 }

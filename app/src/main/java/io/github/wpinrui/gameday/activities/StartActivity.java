@@ -20,32 +20,26 @@ import io.github.wpinrui.gameday.ui.StartAdapter;
 public class StartActivity extends AppCompatActivity {
 
     private ArrayList<Statistic> statistics;
-    private FloatingActionButton fab;
     private Model model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
-        Utils.setColor(this, R.color.dark_primary);
         initElements();
     }
 
     private void initElements() {
         Model.initialise(onModelChanged);
-        fab = findViewById(R.id.floating_action_button);
-        fab.setEnabled(false);
-        fab.setOnClickListener(v -> Utils.goToActivity(this, DailyUpdateActivity.class));
     }
 
     private final Runnable onModelChanged = () -> {
         model = Model.getInstance();
-        fab.setEnabled(true);
         RecyclerView rvStatistics = findViewById(R.id.rvStatistics);
         statistics = model.getStatistics();
         StartAdapter adapter = new StartAdapter(statistics);
         rvStatistics.setAdapter(adapter);
-        rvStatistics.setLayoutManager(new GridLayoutManager(this, 3)); // TODO: fix cut off
+        rvStatistics.setLayoutManager(new LinearLayoutManager(this)); // TODO: fix cut off
     };
 
 

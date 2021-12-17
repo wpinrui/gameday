@@ -2,7 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="plain">#FFFFFF</color>
+    <color name="plain">#000000</color>
     <color name="dark_primary">#98290C</color>
     <color name="default_primary">#b7472a</color>
     <color name="glow_primary">#FF623A</color>
@@ -10,6 +10,7 @@
     <color name="accent">#03A9F4</color>
     <color name="secondary_text">#757575</color>
     <color name="divider">#BDBDBD</color>
-    <color name="coloredBackground">#FFFFFF</color>
-    <color name="coloredBackgroundCard">#FFFFE3DA</color>
+    <color name="coloredBackground">#000000</color>
+    <color name="coloredBackgroundCard">#FF252525</color>
+
 </resources>

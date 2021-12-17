@@ -27,6 +27,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         initElements();
+        Utils.setNotificationBarColor(this, R.color.plain);
+        Utils.setLightNotificationTextColor(this);
     }
 
 

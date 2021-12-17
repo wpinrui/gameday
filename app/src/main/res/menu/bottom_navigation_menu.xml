@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/page_1"
+        android:icon="@drawable/ic_overview"
+        android:title="@string/page_overview"/>
+    <item
+        android:id="@+id/page_2"
+        android:icon="@drawable/ic_history"
+        android:title="@string/page_history"/>
+    <item
+        android:id="@+id/page_3"
+        android:icon="@drawable/ic_daily_update"
+        android:title="@string/page_daily_update"/>
+    <item
+        android:id="@+id/page_4"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/page_settings"/>
+</menu>
